@@ -9,7 +9,7 @@ class Projects {
         img  : "img/recipes_img.jpg"
     }, {
         name : 'Landing Page',
-        desc : 'A landing page featuring some music features.',
+        desc : 'A landing page with some music features.',
         live : 'https://edwin5658.github.io/odin-landing-page/',
         repo : 'https://github.com/Edwin5658/odin-landing-page',
         img  : 'img/landing-page_img.jpg'

@@ -1,0 +1,449 @@
+/* root elements*/
+
+:root {
+    /* Colors */
+    font-family: "Inter", sans-serif;
+    --text-color: rgb(15, 15, 15);
+    --background-color: rgb(220, 230, 240);
+    --primary-color: rgb(62, 140, 230);
+    --secondary-color: rgb(250, 250, 250);
+    --special-color: rgb(252, 185, 0);
+    --highlight-color: rgb(196, 227, 248);
+    --searchbar-color: rgb(213, 224, 231);
+
+    /* Shadows */
+    --sidebar-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.8);
+    --sidebar-glow: 0 0 0.1em var(--highlight-color);
+    --action-box-glow: 0 0 0.2em var(--special-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base Elements */
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw;
+    color: var(--text-color);
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+
+}
+
+a, a *, button, button * {
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 0.02em 0.02em 0.1em var(--text-color);
+}
+
+a:hover, a:focus, a:active {
+    color: var(--special-color);
+    text-decoration: underline;
+}
+
+svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+svg path {
+    fill: var(--secondary-color);
+}
+
+nav {
+    min-height: 100%;
+    background-color: var(--primary-color);
+    width: 15em;
+    color: var(--secondary-color);
+}
+
+.dash-logo {
+    user-select: none;
+    font-size: 1.25em;
+    color: var(--secondary-color);
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    margin-left: 0.5em;
+    padding: 0.5em 0 0.5em 0.5em;
+    white-space: nowrap;
+    font-size: 1.5em;
+}
+
+.dash-logo:hover {
+    text-shadow: var(--sidebar-glow);
+}
+
+.dash-logo svg {
+    vertical-align: bottom;
+}
+
+.dash-logo:hover svg{
+    filter : drop-shadow(var(--sidebar-glow));
+}
+
+.nav-list {
+    position: sticky;
+    top: 5em;
+}
+
+.nav-link {
+    display: block;
+    padding: 0 0 1em 2em;
+}
+
+.nav-link:link,
+.nav-link:visited {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    text-decoration: none;
+    text-shadow: var(--sidebar-glow);
+    transform: scale(1.1);
+}
+
+.nav-link:hover svg,
+.nav-link:focus svg,
+.nav-link:active svg {
+    filter: drop-shadow(var(--sidebar-glow));
+}
+
+.nav-list svg {
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.nav-link[title='Settings'] {
+    margin-top: 4em;
+}
+
+/* main */
+
+main {
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+
+
+/* header */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.3);
+    padding-bottom: 0.5em;
+    position: sticky;
+    top: -4.2em;
+    z-index: 2;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header form {
+    align-items: flex-start;
+    background-color: var(--searchbar-color);
+    border-radius: 1.5em;
+    box-shadow: inset 0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+    display: flex;
+    flex: 4;
+    justify-content: flex-start;
+    margin: 1em 0 1.5em 1.5em;
+    overflow: hidden;
+    padding: 0 0.5em;
+}
+
+header form label {
+    display: none;
+}
+
+header form button {
+    background-color: transparent;
+    border: none;
+    border-radius: 1.25em;
+    height: 1.5em;
+    margin: 0.5em 0 0;
+}
+
+header form button svg path {
+    fill: var(--text-color);
+}
+
+header form input {
+    background-color: var(--searchbar-color);
+    border: none;
+    border-radius: 1.25em;
+    color: var(--searchbar-color);
+    cursor: text;
+    flex: 1;
+    font-size: 1em;
+    height: 1.5em;
+    margin: 0.3em 0 0;
+}
+
+header form *:focus {
+    outline: none;
+}
+
+.header-top > svg {
+    margin: 0.5em 2em 1em 3em;
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.header-top > svg path {
+    fill: var(--text-color);
+}
+
+.header-top .profile {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
+}
+
+.header-top img{
+    height: 2.5em;
+    width: 2.5em;   
+    border-radius: 50%;
+}
+
+.profile > span {
+   padding-left: 1em; 
+   font-size: 1.5rem;
+   font-weight: 600;
+}
+
+.header-main .profile {
+    width: 50%;
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-main img {
+    height: 3em;
+    width: 3em;   
+    border-radius: 50%;
+    margin-right: 0.1em;
+}
+
+.profile-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.profile-name-container p {
+    line-height: 0;
+}
+
+.profile-name-container .greetings {
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.profile-name-container .profile-name {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.action-buttons {
+    flex: 1;
+    align-self: center;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.action-buttons button {
+    width: 15%;
+    height: 2.5em;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    border-radius: 1.75em;
+    border: 0;
+}
+
+.action-buttons button:hover {
+    background-color: var(--special-color);
+    box-shadow: var(--action-box-glow);
+}
+
+/* main section */
+
+.main-section {
+    display: flex;
+    flex: 1;
+    padding: 1em 2em;
+    background-color: var(--background-color);
+}
+
+.main-section h3 {
+    display: block;
+    font-size: 1.2em;
+    margin: 0 0 1em;
+    white-space: nowrap;
+}
+
+.main-section h4 {
+    margin: 0 0 1em;
+}
+
+.main-section article {
+    background-color: var(--high-color);
+    border-radius: 1em;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+    margin: 0;
+    padding: 1em;
+}
+
+/* projects */
+
+#projects {
+    flex: 3;
+}
+
+#projects > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+#projects article {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    background-color: var(--secondary-color);
+    box-shadow:
+            inset 0.5em 0 0 var(--special-color),
+            0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+}
+
+#projects h4 img {
+    filter: drop-shadow(0.1em 0.1em 0.05em rgba(0,0,0,0.8));
+    height: 1em;
+    margin-right: 0.2em;
+    vertical-align: top;
+    width: auto;
+}
+
+#projects article > img {
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+    height: 60%;
+    margin: 0 auto;
+    max-width: 650px;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#projects article p {
+    flex: 1;
+    line-height: 0;
+    font-size: 0.8em;
+}
+
+#projects article div {
+    text-align: right;
+}
+
+#projects article a {
+    margin-left: 0.3em;
+    text-decoration: none;
+}
+
+#projects article svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+#projects article svg path {
+    fill: var(--primary-color);
+}
+
+#projects article a:hover svg path {
+    fill: var(--special-color);
+}
+
+#projects article div {
+    margin-top: 1em;
+}
+
+/* exercises */
+
+#exercises {
+    flex: 1;
+    padding-left: 1em;
+}
+
+#exercises article {
+    padding: 0.5em 1em;
+    background-color: var(--secondary-color);
+}
+
+#exercises h3 {
+    font-size: 1em;
+    margin-left: 0.2em;
+}
+
+#exercises h4 {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+#exercises #javascript {
+    margin-top: 0.4em;
+}
+
+#exercises #CSS {
+    margin-top: 1em;
+}
+
+#exercises p {
+    border-bottom: 1px solid var(--highlight-color);
+    font-size: 0.7em;
+    margin: 0.3rem 0 0.6rem;
+    padding-bottom: 0.8rem;
+}
+
+#exercises p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
